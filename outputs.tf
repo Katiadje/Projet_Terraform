@@ -1,11 +1,16 @@
 # outputs.tf
 
-output "vm_public_ip" {
-  description = "Adresse IP publique de la machine virtuelle"
-  value       = aws_instance.web_server.public_ip
+output "instance_ip" {
+  description = "L'adresse IP publique de l'instance"
+  value       = aws_instance.my_instance.public_ip
 }
 
-output "s3_bucket_url" {
-  description = "URL du bucket S3"
-  value       = aws_s3_bucket.static_files.website_endpoint
+output "bucket_name" {
+  description = "Le nom du bucket S3"
+  value       = aws_s3_bucket.my_bucket.bucket
+}
+
+output "db_endpoint" {
+  description = "L'endpoint de la base de données"
+  value       = aws_db_instance.my_db.endpoint
 }

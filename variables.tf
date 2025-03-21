@@ -1,27 +1,19 @@
 # variables.tf
 
+variable "instance_type" {
+  description = "Type de l'instance (par exemple, t2.micro)"
+  default     = "t2.micro"
+}
+
 variable "region" {
-  description = "La région AWS où déployer l'infrastructure"
-  type        = string
-  default     = "us-west-1"
+  description = "Région du provider (par exemple, us-west-2 pour AWS)"
+  default     = "us-west-2"
 }
 
-variable "aws_access_key" {
-  description = "Clé d'accès AWS"
-  type        = string
-}
-
-variable "aws_secret_key" {
-  description = "Clé secrète AWS"
-  type        = string
+variable "ami_id" {
+  description = "ID de l'AMI à utiliser pour l'instance"
 }
 
 variable "key_name" {
-  description = "Nom de la clé SSH pour accéder à la VM"
-  type        = string
-}
-
-variable "s3_bucket_name" {
-  description = "Nom du bucket S3 pour stocker les fichiers statiques"
-  type        = string
+  description = "Nom de la clé SSH"
 }
